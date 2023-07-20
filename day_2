@@ -1,4 +1,5 @@
-script后缀为.m,要是有预宣告，脚本运行速度会更快。
+script后缀为.m。写出自己需要的脚本，并储存（库函数）。
+要是有预宣告，脚本运行速度会更快。
 %为注释，%%为分区块。
 
 
@@ -24,8 +25,38 @@ for ii=1:size(A,1)
 end
 disp(B);
 
+
 与C语言不同，matlab的switch语句不用在每个case后面加break，取代break的是；代表结束，而循环语句中还用break和continue。并且switch中default->otherwise。
+
 
 Tips:
 1.程序前加clear all；以清除前者影响。
-2.
+2.和C差不多的语言习惯可以清晰明了。
+3.适当运用换行号ellipsis(...)（三个点+enter），使脚本简介明了（如过长的矩阵）。
+4.脚本运行中，可用ctr+c强制停止运行。
+
+
+函数：
+可用edit(which('name.m'))查看内置函数。
+
+如平均值edit(which('mean.m'))，可得出：
+function y = mean（x）
+（注释）
+（代码）
+
+function - keyword   y - 输出   mean - 函数名   x - 输入
+
+
+Q2:
+写出用户自定义函数，可根据给定的初始位置x0，初始速度v0,掉落时间t，计算出其位置。（x=x0+v0t+(1/2)gt^2)
+
+Ans:
+function x = freebody(x0,v0,t)
+% calculation of free falling
+% x0: initial diaplacement in m
+% v0: initial velocity in m/sec
+% t: the elapsed time in sec
+% x: the depth of falling in m
+x=x0+v0.*t+(1/2)*9.8*t.*t;
+
+输入变量为点乘，可利用矩阵计算多组数据。
