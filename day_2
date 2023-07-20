@@ -1,1 +1,31 @@
+script后缀为.m,要是有预宣告，脚本运行速度会更快。
+%为注释，%%为分区块。
 
+
+Q1:
+1.copy A to B
+2.在A中<0的元素，在B中取绝对值
+    0  -1  4
+A=[ 9 -14 25]
+   -34 49 64
+
+Ans:
+clear;
+A=[0 -1 4; 9 -14 25; -34 49 64];
+B=zeros(3,3);
+for ii=1:size(A,1)
+    for jj=1:size(A,2)
+        if A(ii,jj)>0
+           B(ii,jj)=A(ii,jj);
+        else num=abs(A(ii,jj));
+           B(ii,jj)=num;
+        end
+    end
+end
+disp(B);
+
+与C语言不同，matlab的switch语句不用在每个case后面加break，取代break的是；代表结束，而循环语句中还用break和continue。并且switch中default->otherwise。
+
+Tips:
+1.程序前加clear all；以清除前者影响。
+2.
