@@ -1,0 +1,6 @@
+inputname         %输入参数的名称
+mfilename         %脚本文件名称
+nargin            %输入参数的个数
+nargout           %输出参数的个数
+varargin          %输入参数的长度
+varargout         %输出参数的长度
