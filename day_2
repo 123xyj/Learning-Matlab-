@@ -59,4 +59,13 @@ function x = freebody(x0,v0,t)
 % x: the depth of falling in m
 x=x0+v0.*t+(1/2)*9.8*t.*t;
 
-输入变量为点乘，可利用矩阵计算多组数据。
+%输入变量为点乘，可利用矩阵计算多组数据。
+
+
+Q3:
+根据速度，时间，质量，求出加速度与力。（a=(v2-v1)/(t2-t1),F=ma)
+
+Ans:
+function [a F] = acc(v1,v2,t1,t2,m)
+a=(v2-v1)./(t2-t1);
+F=m.*a;
