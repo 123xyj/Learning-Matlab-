@@ -23,4 +23,14 @@ M3:s2=flip(s1);       %flip翻转元素，而reverse只能翻转字符串
 
 
 matlab的struct与c类似，如：
+学生-姓名&学号&邮箱&成绩
+student.name=’xu yujia‘
+student.number=2231019
+student.id='18057998120@163.com'
+student.grade=[100,75,84]
 student
+%有各种类型，且可以嵌套
+%输入student可查看所有信息，输入单个可查看单个信息
+%有很多同学可构造student结构,student(1)(2)...，输入student显示的是student(number)信息。若想看第二个学生的成绩，输入：student(2).grade(1,2);
+%struct的指令有很多，如：cell2struct、fieldnames、getfield、isfield、isstruct、orderfields、rmfield、setfield、strcut、struct2cell、strcutfun...
+%struct指令为：A=struct（field1，value1，field2，value2......fieldN,valueN)，其中可嵌套struct，调用为A.fieldX.fieldY
