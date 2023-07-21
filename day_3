@@ -4,3 +4,23 @@ nargin            %输入参数的个数
 nargout           %输出参数的个数
 varargin          %输入参数的长度
 varargout         %输出参数的长度
+
+
+int 整数型；uint 无符号的整数型；single 单精度浮点数；double 双精度浮点数。
+
+Matlab中的字符串与C中略有不同。但是命令strcmp、strcat、strlen、strcpy都存在，strchr->strfind。
+
+
+Q1：
+字符串s1='I like the letter E'
+写一个script，使s2='E rettel eht ekil I'
+
+Ans:
+M1:s2=s1(end:-1:1);
+M2:s2=reverse(s1);
+M3:s2=flip(s1);       %flip翻转元素，而reverse只能翻转字符串
+......
+
+
+matlab的struct与c类似，如：
+student
