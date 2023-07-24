@@ -47,3 +47,10 @@ A(2,1)={'O M G'};
 如：A{1,1}=[1 4 9; 2 5 8; 3 6 7];
 A{2,1}='O M G';
 
+
+为什么cell可以存在多个不同类型的数值？   因为其内核为指针（pointer）。
+
+怎么看某个cell里的内容？如A cell。    若输入A(1,1),得到的是A(1,1)所指内容的类型。A{1,1}才能得到其所指内容。类似于C语言中的*。A{2,1}(1,1)
+
+
+cell相关指令：cell、cell2mat、cell2struct、celldisp、cellfun、cellplot、cellstr、iscell、mat2cell、num2cell、struct2cell...
