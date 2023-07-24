@@ -33,4 +33,4 @@ student
 %输入student可查看所有信息，输入单个可查看单个信息
 %有很多同学可构造student结构,student(1)(2)...，输入student显示的是student(number)信息。若想看第二个学生的成绩，输入：student(2).grade(1,2);
 %struct的指令有很多，如：cell2struct、fieldnames、getfield、isfield、isstruct、orderfields、rmfield、setfield、strcut、struct2cell、strcutfun...
-%struct指令为：A=struct（field1，value1，field2，value2......fieldN,valueN)，其中可嵌套struct，调用为A.fieldX.fieldY
+%struct指令为：A=struct（'field1'，value1，'field2'，value2......'fieldN',valueN)，其中可嵌套struct，调用为A.fieldX.fieldX
