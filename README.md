@@ -1,7 +1,7 @@
 # Learning-Matlab-
 day_1
 
-matlab中许多问题可百度、谷歌、help+代码得到。  如： pi；e^->exp();  ln->log;  开平方根->sqrt;  abs->取绝对值;  mean->算平均值，以列优先；  rem(a,b)->取余数；  prod->数组元素乘积（其运算规律类似于max）等。
+matlab中许多问题可百度、谷歌、help+代码得到。  如： pi；e^->exp();  ln->log;  开平方根->sqrt;  abs->取绝对值;  mean->算平均值，以列计算；  rem(a,b)->取余数；  prod->数组元素乘积（其运算规律类似于max）等。
 save/load (name).mat    //可保存/读取工作区变量。
 variable name应以字母开头，用_连接。不能取key words，如：Inf；eps；ans；NaN；pi等。
 使用whos查看变量性质。  clear （name） 清除（单个）变量。  format设置格式。  %为注释。
