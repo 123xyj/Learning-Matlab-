@@ -40,4 +40,9 @@ B=reshape(A,3,2)     %B=[1 4 2; 5 3 6]，reshape(被改变,行数,列数)，按�
 
 Matlab存储工作区有三种：1..mat  2..text  3.xls/xlsx
 1、2 使用load和save指令，如：save mydate1.mat %-ascii%，load('mydate1.mat'%,'ascii'%)。储存某个特定变量：save(filename,variables)
-3 使用xlsread和xlswrite，如：a=xlsread('filename %score.xlsx'，'范围 %B4:D4')
+3 使用xlsread和xlswrite，如：a=xlsread('filename %score.xlsx'，'范围 %B4:D4')  %只能读数值/  [a b]=xlsxread('filename')  %可以读字符。xlsxwrite('filename',variables/{'header'},sheet,'写入位置'%'E2:E4')
+
+
+fscanf(fid,format,size)
+fprintf(fid,format,x,y,...)
+台大视频第四节1：28：00开始
