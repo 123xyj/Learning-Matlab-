@@ -1,0 +1,36 @@
+绘图入门
+
+plot()
+1.plot(x,y)
+2.plot(y)                 %x=[1...n]，n为y的长度。如：plot(cos(0:pi/20:2*pi))
+
+直接plot一次只能出一个函数图，前面的图像会被后面的图像顶掉。要想一张图出多个函数需要使用hold on/off指令。...
+如：
+hold on;
+plot(cos(0:pi/20:2*pi));
+plot(sin(0:pi/20:2*pi));
+hold off;
+或者一次plot多个函数。
+
+函数颜色需要使用plo(x,y,'str')        %如：plot(cos(0:pi/20:2*pi),'or--') / plot(sin(0:pi/20:2*pi),'xg:')
+
+当需要标注图标时候，使用legend()指令  %legend('name1',''...'nameN')。
+x=0:0.5:4*pi;
+y=sin(x);
+h=cos(x);
+w=1./(1+exp(-x));
+g=(1/(0.4*(2*pi)^0.5)).*exp(-0.5.*((x-1)./0.4).^2);
+plot(x,y,'bd-',x,h,'gp:',x,w,'ro-',x,g,'c^-');
+legend('sin(x)','cos(x)','Sigmoid','Gauss functin');
+
+
+当需要x/y轴时，使用xlabel()/ylabel()/zlabel。
+当需要标题时，使用title()。如：
+x=0:0.1:2*pi;
+y1=sin(x);
+y2=exp(-x);
+plot(x,y1,'b*-',x,y2,'go:');
+legend('sin(x)','e^{-x}');                         %此处大括号{}代表特殊字符
+xlabel('0 to 2\pi');                               %\pi代表字符pai
+ylabel('value of sin(x) and e^{-x}');
+title('Function Plots of sin(x) and e^{-x}');
