@@ -66,8 +66,8 @@ hold on                                                             %此处hold 
 x=linspace(1,2);
 f=x.^2;
 g=sin(2*pi.*x);
+line(x,f,'Color','black');
 plot(x,g,'ro');
-line(x,f,'Color','black')
 xlabel('Time(ms)');
 ylabel('f(t)');
 legend('t^{2}','sin(2\pi t)','Location','northwest');              %legend('','属性','value')，此处和line命令差不多
@@ -76,8 +76,61 @@ hold off
 
 
 图像窗口的设置可以修改图像。台大第五集，37：00。
+
 gcf是图像窗口（figure），gca是坐标轴（axes），h=plot(x,y)则h是函数。
 get()，得到三者的相关属性。
-set(name,'property name',value),如：set(gca,'XLim',[0,2*pi])
+
+set(name,'property name',value),如：set(gca,'XLim',[0,2*pi])  set(gca,'XTick',0:pi/2:2*pi)  set(gca,'XTickLabel',{'0','\pi/2','pi','3\pi/2','2\pi'})        %此处为设置坐标轴为pi
+XTick为实际刻度，XTickLabel为刻度名称。
+
+set(h,name,value...)，此处和line设置一样，例子：set(h,'Color','green','LineWidth','7.0')。
+
+删除曲线为delete()。
 
 
+Marker为图像中的各个点，其由face color和edge color两种颜色组成。
+
+
+Q2:
+将Q1的图像，f变粗，g的mark face color改为紫色，加大title，加粗坐标轴的字和坐标轴注释。
+
+Ans:
+1.直接属性栏修改
+2.h1=line(x,f,'Color','black');
+h2=plot(x,g,'ro');
+set(gca,'FontSize',14);
+set(h1,'LineWidth',2.0);
+set(h2,'MarkerFaceColor',[0.49,0.18,0.56]);
+
+
+当需要画多个图像在不同窗口时，需使用figure, plot(x,y),如：
+x=-10:0.1:10;
+y1=x.^2-8;
+y2=exp(x);
+figure, plot(x,y1);
+figure, plot(x,y2);
+就可画出两个图像。gca与gcf只能修改最近那个图像。
+
+figure('position',[left,bottom,width,height]);                        %改变图像位置、大小
+
+
+当需要画多个图像在同一窗口时，需使用subplot(m,n,num)命令，m代表一个窗口有m行，n列，一共m*n个图像，num代表所画图像在第几个位置，1是在第一个位置，位置从左往右，自上而下数。
+
+例子：t=0:0.1:2*pi;
+x=3*cos(t);
+y=sin(t);
+subplot(2,2,1);
+plot(x,y);
+axis normal;               %
+subplot(2,2,2);
+plot(x,y);
+axis square;               %代表图像坐标轴长宽度一致
+subplot(2,2,3);
+plot(x,y);
+axis equal;                %代表图像xy轴单元格长度一致
+subplot(2,2,4);
+plot(x,y);
+axis equal tight;          %坐标轴与图形相切
+
+值得注意的是，四个图是一个图案，通过axis命令改变图像大小，而坐标轴不变，导致不同。...
+并且，通过命令只能改变最后一个图。
