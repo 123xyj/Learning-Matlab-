@@ -39,7 +39,7 @@ ylabel('Right Y-axils');
 title('Labeling yyaxis');
 
 
-hist()                                  %整体数据表，类似统计表
+hist()                                  %整体数据，类似统计表
 如：y=randn(1,1000);                    %rand：随机分布的矩阵；randn：正态分布的矩阵
 subplot(2,1,1);
 hist(y,10);
@@ -48,7 +48,8 @@ subplot(2,1,2);
 hist(y,50);
 title('Bin=50,即50组数据');
 
-bar()                                   %个体数据表
+
+bar()                                   %个体数据
 如：x=[1 2 5 4 8];
 y=[x; 1:5];
 subplot(1,5,1);
@@ -104,3 +105,32 @@ Q1:
 如何画六边形？                            %tips：使用polar()
 
 Ans:
+theta=linspace(0,2*pi,7);
+r=ones(1,7);
+polar(theta,r);
+
+
+stairs() and stem()                       %stairs()阶梯图、stem()茎叶图。加上(x,y)则表明xy一一对应，不加上则是每个点是一个单位
+如：x=linspace(0,4*pi,40);
+y=sin(x);
+subplot(1,2,1);
+stairs(y);
+subplot(1,2,2);
+stem(y);
+
+
+Q:
+绘制关于f(t)=sin(pi*t^2/4)的茎叶图，频率为5HZ，茎叶为红色，各点用光滑的曲线连接，曲线为黑色。
+
+Ans：
+hold on
+t=linspace(0,10,50);
+f=sin((pi*t.^2)/4);
+stem(t,f,'r');
+x=linspace(0,10,10000);
+g=sin((pi*x.^2)/4);
+plot(x,g,'k');
+hold off
+
+
+boxplot() and errorbar()                  %箱线图 和 含置信区间的曲线图
