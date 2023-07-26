@@ -72,6 +72,11 @@ title('bar3()得3D图');
 
 pie()                                    %饼状图，呈现各个数据元素占总和百分比,从上往下逆时针排序
 如：a=[10 5 20 30];
-figure.pie(a);                           %这里尝试用figure，用subplot(),也可以
-figure.pie(a,[0,0,0,1]);                 %[0,0,0,1]中1代表数据独立出来，凸显个别数据，默认是0
-figure.pie3(a,[0,0,0,1]);                %pie3()代表3d，
+figure,pie(a);                           %这里尝试用figure，用subplot(),也可以
+figure,pie(a,[0,0,0,1]);                 %[0,0,0,1]中1代表数据独立出来，凸显个别数据，默认是0
+figure,pie3(a,[0,0,0,1]);                %pie3()代表3d
+
+
+polat(theta,r);theta();r()               %类似极坐标
+如：x=1:100;
+theta=x/10;
