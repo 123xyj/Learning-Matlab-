@@ -1,0 +1,22 @@
+linspace(num1,num2,num3)                   %num3默认100可省略，指在num1和num2之间均匀分布的矩阵
+logspace(num1,num2,num3)                   %num3默认50可省略，指在10^num1和10^num2之间均匀分布的矩阵
+
+
+平时绘图使用plot/line(x,y)，x/y的tick默认为整数。
+使用semilogx(x,y)（semilogy(x,y)）绘图可使x轴（y轴）为等比的对数刻度。
+使用loglog(x,y)绘图可使得x与y轴的刻度都为对数刻度。
+如：
+x=logspace(-1,1,100);
+y=x.^2;
+subplot(2,2,1);
+plot(x,y);
+title('Plot')
+subplot(2,2,2);
+semilogx(x,y);
+title('Semilogx')
+subplot(2,2,3);
+semilogy(x,y);
+title('Semilogy')
+subplot(2,2,4);
+loglog(x,y);
+title('Loglog')；
