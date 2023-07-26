@@ -19,4 +19,59 @@ semilogy(x,y);
 title('Semilogy')
 subplot(2,2,4);
 loglog(x,y);
-title('Loglog')；
+title('Loglog');
+可选择加入：set(gca,'XGrid','on');指令查看网格。
+
+
+yyaxis()                                %y轴可以表现两个变量,可用hold on/off在一个y轴基础上画多个图形，修改是改最近那个函数
+如：x=0:0.01:20;
+
+y1=200*exp(-0.05*x).*sin(x);
+yyaxis left;
+plot(x,y1,'r-');
+ylabel('Left Y-axils');
+
+y2=0.8*exp(-0.5*x).*sin(10.*x);
+yyaxis right;
+plot(x,y2,'b:');
+ylabel('Right Y-axils');
+
+title('Labeling yyaxis');
+
+
+hist()                                  %整体数据表，类似统计表
+如：y=randn(1,1000);                    %rand：随机分布的矩阵；randn：正态分布的矩阵
+subplot(2,1,1);
+hist(y,10);
+title('Bin=10,即10组数据');
+subplot(2,1,2);
+hist(y,50);
+title('Bin=50,即50组数据');
+
+bar()                                   %个体数据表
+如：x=[1 2 5 4 8];
+y=[x; 1:5];
+subplot(1,5,1);
+bar(x);
+title('高度为X，x轴为序号');
+subplot(1,5,2);
+bar(y);
+title('高度为Y，x轴为行号');
+subplot(1,5,3);
+bar3(y);                                 %bar3()，3d柱状图
+title('bar3()得3D图');
+subplot(1,5,4);
+bar(y,'stacked');                        %其图像坐标意义与bar(y)相同，
+title('每行数据堆叠');
+subplot(1,5,5);
+barh(y);                                 %barh()，图像旋转90度
+title('bar3()得3D图');
+
+注：可以多个指令结合，如：barh(y,'stacked');
+
+
+pie()                                    %饼状图，呈现各个数据元素占总和百分比,从上往下逆时针排序
+如：a=[10 5 20 30];
+figure.pie(a);                           %这里尝试用figure，用subplot(),也可以
+figure.pie(a,[0,0,0,1]);                 %[0,0,0,1]中1代表数据独立出来，凸显个别数据，默认是0
+figure.pie3(a,[0,0,0,1]);                %pie3()代表3d，
