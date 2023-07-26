@@ -98,3 +98,9 @@ theta=linspace(0,2*pi);
 r=1-sin(theta);
 subplot(1,4,4);
 polar(theta,r);
+
+
+Q1:
+如何画六边形？                            %tips：使用polar()
+
+Ans:
