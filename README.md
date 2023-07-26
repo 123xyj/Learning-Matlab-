@@ -22,6 +22,6 @@ sort(A)                 %将A以列分块，每列自上而下，从小到大排
 sortrows(A)             %将A以每行为整体，以第一个元素，按照大小排列。
 size(A)                 %查看A的行列数。其中：size(A,1)为A的行数，size(A,2)为A的列数。
 length(A)               %查看A行列数的最大值。
-find(conditian)         %根据condition，查找矩阵内元素位置。
+find(condition)         %根据condition，查找矩阵内元素位置。
 
 eye(n) %n阶单位矩阵;   diag([number number     ]) %对角矩阵;   zeros(n1,n2) %0矩阵;   ones(n1,n2) %元素全为1的矩阵;   rand(n1,n2) %随机数字矩阵。
