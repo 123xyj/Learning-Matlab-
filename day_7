@@ -1,0 +1,18 @@
+fill()                     %在封闭形状内填充颜色。使用类似于plot(),fill(x,y,'')
+如：
+t=linspace(pi/8,2*pi+pi/8,9);
+x=cos(t);
+y=sin(t);
+fill(x,y,'r');
+axis square off;
+text(0,0,'STOP','Color','white','FontSize',80, ...
+    'FontWeight','bold','HorizontalAlignment','center');
+%得到一个八边形，红底白字的stop
+
+
+Q1：
+绘制一个正菱形，要求黄底黑字的WAIT,边框粗黑色。
+
+Ans:
+t=linspace(0,2*pi,5);
+
