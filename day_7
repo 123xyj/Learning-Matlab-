@@ -1,12 +1,12 @@
-fill()                     %在封闭形状内填充颜色。使用类似于plot(),fill(x,y,'')
+fill()                                                        %在封闭形状内填充颜色。使用类似于plot(),fill(x,y,'colorname','Name',value)
 如：
 t=linspace(pi/8,2*pi+pi/8,9);
 x=cos(t);
 y=sin(t);
 fill(x,y,'r');
-axis square off;
+axis square off;                                              %关闭直角坐标系
 text(0,0,'STOP','Color','white','FontSize',80, ...
-    'FontWeight','bold','HorizontalAlignment','center');
+    'FontWeight','bold','HorizontalAlignment','center');      %text(x,y,z,'text','Name','value')，在xy（z）坐标下，添加text文本,以及文本属性
 %得到一个八边形，红底白字的stop
 
 
@@ -15,4 +15,11 @@ Q1：
 
 Ans:
 t=linspace(0,2*pi,5);
+x=cos(t);
+y=sin(t);
+fill(x,y,'yellow','LineWidth',4);
+axis square off;
+text(0,0,'WAIT','Color','k','FontSize',60, ...
+    'FontWeight','bold','HorizontalAlignment','center');
+
 
