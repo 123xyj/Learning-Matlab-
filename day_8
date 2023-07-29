@@ -54,14 +54,81 @@ colormap(mymap);
 
 
 3D绘图：
-plot3()                %3D曲线图
-surf()                 %3D阴影曲面图
-surfc()
-surface()
-meshc()
-contour()
-contourf()zx
+plot3()                %3D曲线图，于plot()使用方法相同
+surf()                 %3D带色的曲面图
+surfc()                %创建带contour图的surf图
+surface()              %在图上加surface内容，不替换图
+mesh()                 %类似surf的曲面，但无面颜色，有边颜色
+meshc()                %创建带contour图的mesh图
+contour()              %等高线图，解析见下
+contourf()             %创建有颜色的contour图，f为fill，使用方法与contour一致
 
 其实matlab没有2D图，都是3D图投影。2D可以通过旋转查看3D。
 
 
+contour()              %等值线图，与imagesc指令类似，常用作地高图
+如：x=-3.5:0.2:3.5;
+y=-3.5:0.2:3.5;
+[X,Y]=meshgrid(x,y);
+Z=X.*exp(-X.^2-Y.^2);
+subplot(2,1,1);
+mesh(X,Y,Z);
+axis square;
+subplot(2,1,2);
+contour(X,Y,Z);
+axis square;
+
+contour(变量,[])，使得分段更为细致，等高线就更为密集，如：上述命令可加上contour(Z,[-0.45:0.05:0.45]);。或者知道要分几段，直接contour(x,y,z,20);（分20段）。
+contour也可以和plot一样，contour(x,y,z,'','Name','value')，如：contour(x,y,z,'--','ShowText','on');。
+
+
+contourf()的使用与contour一致。
+如：
+%contourf（上述contour图像加强版）
+x=-3.5:0.2:3.5;
+y=-3.5:0.2:3.5;
+[X,Y]=meshgrid(x,y);
+Z=X.*exp(-X.^2-Y.^2);
+contourf(X,Y,Z,[-0.45:0.05:0.45],'ShowText','on');
+xlim([-2 2]);
+ylim([-2 2]);
+axis square;
+colormap(jet);
+
+
+meshc()和surfc()
+如：
+x=-3.5:0.2:3.5;
+y=-3.5:0.2:3.5;
+[X,Y]=meshgrid(x,y);
+Z=X.*exp(-X.^2-Y.^2);
+figure,meshc(X,Y,Z);
+figure,surfc(X,Y,Z);
+
+
+view()                 %view(旋转角度,提高角度)，物品的观测角度很多，view指令是控制摄像头沿x轴正方向为起始，旋转指定角度；再以xoy面为起始，提高指定角度观测
+如：
+sphere(50);
+shading flat;
+light('Position',[1 3 2]);
+light('Position',[-3 -1 3]);
+colormap(jet);
+material shiny;
+axis vis3d off;
+set(gcf,'Color',[1 1 1]);
+view(-45,20);
+
+%尝试改变view角度，改变观测结果
+
+
+light()                 %打光，light('Position',[坐标])
+
+设置好打光后也可以改变坐标，来改变打光位置，如：
+L1=light('Position',[-1 -1 -1]);
+set(L1,'Position',[1 -1 1]);
+
+还可以改变光的颜色，如：
+set(L1,'Color','g');
+
+
+patch()                 %创建空间多边形，案例见help patch
