@@ -92,7 +92,7 @@ Marker为图像中的各个点，其由face color和edge color两种颜色组成
 
 
 Q2:
-将Q1的图像，f变粗，g的mark face color改为紫色，加大title，加粗坐标轴的字和坐标轴注释。
+将Q1的图像，f变粗，g的marker face color改为紫色，加大title，加粗坐标轴的字和坐标轴注释。
 
 Ans:
 1.直接属性栏修改
