@@ -9,5 +9,5 @@ y = 1:5;
 [X,Y,Z]=meshgrid(x,y,z)同理。若[]=meshgrid(x),则是创建length(x)*length(x)*length(x)的多维矩阵。
 
 
-surf()               %3D曲面图，根据xy确定z的值，再根据z值确定曲面颜色
+surf()               %3D曲面图。surf(x,y,z)，z的值为高度，再根据z值确定xy网格曲面颜色。surf(z),的不同在于由z的列行确定xy
 
