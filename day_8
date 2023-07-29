@@ -47,4 +47,21 @@ Ans：
 x=[1:10;3:12;5:14];
 imagesc(x);
 colorbar;
-mymap=[]
+a=zeros(1,14);
+b=linspace(0,0.9,14);
+mymap=[a' b' a'];
+colormap(mymap);
+
+
+3D绘图：
+plot3()                %3D曲线图
+surf()                 %3D阴影曲面图
+surfc()
+surface()
+meshc()
+contour()
+contourf()zx
+
+其实matlab没有2D图，都是3D图投影。2D可以通过旋转查看3D。
+
+
