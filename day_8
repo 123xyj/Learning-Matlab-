@@ -8,6 +8,43 @@ y = 1:5;
 
 [X,Y,Z]=meshgrid(x,y,z)同理。若[]=meshgrid(x),则是创建length(x)*length(x)*length(x)的多维矩阵。
 
-
 surf()               %3D曲面图。surf(x,y,z)，z的值为高度，再根据z值确定xy网格曲面颜色。surf(z),的不同在于由z的列行确定xy
 
+imagesc()            %根据数值创建二维颜色图像
+
+colorbar             %类似legend指令，显示颜色及其对应的数值
+
+如：
+[x,y]=meshgrid(-3:0.2:3,-3:0.2:3);
+z=x.^2+x.*y+y.^2;
+surf(x,y,z);
+box on;
+set(gca,'FontSize',16);
+xlabel('x');
+xLim([-4 4]);
+ylabel('y');
+yLim([-4 4]);
+zlabel('z');
+figure,imagesc(z);
+axis square;
+xlabel('x');
+ylabel('y');
+colorbar;
+
+
+colormap()
+matlab内置许多色系，可用colormap()指令调用，colormap(hot/cool/jet/hsv/...)，故上述例子可加入colormap(jet);。可help colormap或者colormap(prism);查看。
+也可以自定义颜色在矩阵中，用colormap()调用。
+
+
+Q1:
+x=[1:10;3:12;5:14];
+imagesc(x);
+colorbar;
+将上述命令的图像，改为绿色表示。
+
+Ans：
+x=[1:10;3:12;5:14];
+imagesc(x);
+colorbar;
+mymap=[]
