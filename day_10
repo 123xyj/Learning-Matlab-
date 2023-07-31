@@ -6,4 +6,8 @@ polyval()                                           %多项式函数的构造，
 %绘制关于f(x)=9x^3-5x^2+3x+7，-2<=x<=5的函数图像
 a=[9 -5 3 7];
 x=-2:0.1:5;
-
+f=polyval(a,x);
+plot(x,f,'LineWidth',2);
+xlabel('x');
+ylabel('y');
+legend('f(x)');
