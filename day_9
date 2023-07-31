@@ -1,0 +1,7 @@
+appdesigner
+
+各种组件功能可见：https://ww2.mathworks.cn/products/matlab/app-designer.html
+
+各类快捷键类似PPT。如：ctr+g %组合、ctr+shift+g %取消组合...
+
+操作逻辑也类似PPT。如：改变多个物体大小，改变的是先选择的那个物件,最后选择的物件是基准。
