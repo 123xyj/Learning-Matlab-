@@ -12,7 +12,7 @@ plot(sin(0:pi/20:2*pi));
 hold off;
 或者一次plot多个函数。
 
-函数颜色需要使用plo(x,y,'str')        %如：plot(cos(0:pi/20:2*pi),'or--') / plot(sin(0:pi/20:2*pi),'xg:')
+函数颜色需要使用plot(x,y,'str')        %如：plot(cos(0:pi/20:2*pi),'or--') / plot(sin(0:pi/20:2*pi),'xg:')
 
 当需要标注图标时候，使用legend()指令  %legend('name1',''...'nameN')。
 x=0:0.5:4*pi;
