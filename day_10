@@ -153,3 +153,11 @@ set(gca,'FontSize',18);
 积分计算规则有：矩形估计法（midpoint）和梯形估计法（）
 
 矩形估计法：将函数按照间隔分为一块块矩形，函数经过矩形的上表面的中点。
+如：
+h=0.05;
+x=0:h:2;
+midpoint=(x(1:end-1)+x(2:end))./2;
+y=4*midpoint.^3;
+inty=sum(h*y);
+
+
