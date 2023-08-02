@@ -182,5 +182,8 @@ inty=h*trapz(y);                                         %可知trapz()相当于
 h=0.05;
 x=0:h:2;
 y=4*x.^3;
-inty=h/3*(y(1)+y(end)+4*sum(y(2:end-1))+sum(y(3:end-2)));
+inty=h/3*(y(1)+y(end)+4*sum(y(2:2:end-1))+2*sum(y(3:2:end-2)));
+%最为精准！
 
+
+matlab中：@为取地址
