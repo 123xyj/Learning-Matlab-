@@ -74,4 +74,17 @@ diff(x,n,dim)
 % n为diff命令操作次数（diff(x,2)=diff(diff(x)）
 % dim是选择行/列/层相减，1为竖着计算：行相减，2为横着计算：列相减，3为层相减
 
+这样就可以用导数的定义求出f'(x)=diff(y)./diff(x)（y=f(x)）
+
+
+Q1：
+求出y=sinx在x=pi/2时的倒数，x间距取0.1。
+
+Ans：
+h=0.1;
+x0=pi/2;
+x=[x0 x0+h];
+y=sin(x);
+dy=diff(y)./diff(x);
+
 
