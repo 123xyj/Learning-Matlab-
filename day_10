@@ -150,7 +150,7 @@ ylabel('y');
 set(gca,'FontSize',18);
 
 
-积分计算规则有：矩形估计法（midpoint）和梯形估计法（）
+积分计算规则有：矩形估计法（midpoint）和梯形估计法（trapezoid）
 
 矩形估计法：将函数按照间隔分为一块块矩形，函数经过矩形的上表面的中点。
 如：
@@ -160,4 +160,15 @@ midpoint=(x(1:end-1)+x(2:end))./2;
 y=4*midpoint.^3;
 inty=sum(h*y);
 
-
+梯形估计法：将函数按照间隔分为一个个区间，函数在小区间左右值为梯形的两端点。
+如：
+h=0.05;
+x=0:h:2;
+trapezoid=(4*x(1:end-1).^3+4*x(2:end).^3)*h/2;
+inty=sum(trapezoid);
+但是其实matlab内置trapzoid的函数：trapz()
+故上述可写为：
+h=0.05;
+x=0:h:2;
+y=4*x.^3;
+inty=h*trapz(y);                                         %可知trapz()相当于求出函数在小区间两端点的平均值
