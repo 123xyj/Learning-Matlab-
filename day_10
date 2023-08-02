@@ -65,7 +65,7 @@ a=[5 0 -2 0 1];
 a=polyint(a,3);  %若算$$f(7)，f=polyval(polyint(a,3),7);
 
 
-非多项式怎么求微分？
+非多项式怎么求微分/积分？
 
 diff()                                              %diff(x),计算x内各个元素的差分（即相邻元素相减的值）
 
@@ -135,3 +135,21 @@ set(gca,'XTickLabel',{'0','\pi/2','\pi','3\pi/2','2\pi',});
 hold off
 
 
+Q3：
+二阶导怎么算呢？f(x)=x^3，x属于[-2,2]。
+
+Ans：
+x=-2:0.1:2;
+y=x.^3;
+dy=diff(y)./diff(x);
+d2y=diff(dy)./diff(x(1:end-1));
+plot(x,y,'k',x(1:end-1),dy,'b',x(1:end-2),d2y,'r');
+legend('f(x)=x^3','f''(x)=3x^2','f''''(x)=6x','Location','southeast');
+xlabel('x');
+ylabel('y');
+set(gca,'FontSize',18);
+
+
+积分计算规则有：矩形估计法和梯形估计法
+
+矩形估计法：将函数按照间隔分为一块块矩形，函数经过矩形的上表面的中点。
