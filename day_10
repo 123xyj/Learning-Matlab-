@@ -88,3 +88,27 @@ y=sin(x);
 dy=diff(y)./diff(x);
 
 
+Q2：
+已知f(x)=sin(x)在x=pi/2时f'(pi/2)=0。使用导数的定义，当h从0.1、0.01、...1e-07，记录求出的导数与正确的导数相差多少。
+
+Ans：
+h=logspace(-1,-7,7);
+x0=pi/2;
+error=zeros(1,size(h,2));
+for i=1:size(h,2)
+x=[x0 x0+h(i)];
+y=sin(x);
+dy=diff(y)./diff(x);
+error(i)=dy-0;
+end
+
+
+Q3：
+求出y=sin(x)在x属于[0,2*pi]时候的所有导数，h=0.1。
+
+Ans：
+h=0.1;
+x=0:h:2*pi;
+y=sin(x);
+dy=diff(y)./diff(x);
+
