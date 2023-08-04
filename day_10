@@ -12,7 +12,7 @@ xlabel('x');
 ylabel('y');
 legend('f(x)');
 
-polyder()                                           %多项式微分(derivative)
+polyder()                                           %多项式微分(derivative)，但是无法得出具体的多项式
 如：
 %对f(x)=5x^4-2x^2+1求微分
 a=[5 0 -2 0 1];
