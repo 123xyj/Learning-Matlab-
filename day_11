@@ -33,9 +33,28 @@ A=solve(eq1,eq2,x,y);
 syms x a b c;
 y=a*x^2+b*x+c;
 s=solve(y,x);
-%若b为被求解量，只需将solve中的x改为b
+%若b为被求解量，只需将solve中的x改为b。也可直接solve(a*x^2+b*x+c,被求解量)
 
 
+Q1：
+利用解析法求出A=[a b; c d]的逆。
 
+Ans：
+syms x y j k a b c d;
+eq1=a*x+b*y-1;
+eq2=c*x+d*y;
+eq3=a*j+b*k;
+eq4=c*j+d*k-1;
+solve(eq1,eq2,eq3,eq4,x,y,j,k);
+或
+syms a b c d;
+A=[a b; c d];
+inv_A=inv(A);
+
+
+syms还能直接用diff求出导，如y=4*x^5：
+syms x;
+y=4*x^5;
+dy=diff(y);
 
 
