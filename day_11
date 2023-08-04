@@ -52,9 +52,24 @@ A=[a b; c d];
 inv_A=inv(A);
 
 
-syms还能直接用diff求出导，如y=4*x^5：
+syms还能直接用diff求出导（得公式），如y=4*x^5：
 syms x;
 y=4*x^5;
 dy=diff(y);
+
+
+Q2：
+求出f=exp(x^2)/(x^3-x+3)和g=(x^2+xy-1)/(y^3+x+3)的导。
+
+Ans：
+syms x y;
+f=exp(x^2)/(x^3-x+3);
+g=(x^2+xy-1)/(y^3+x+3);
+df=diff(f);
+dg=diff(g);
+
+
+
+
 
 
