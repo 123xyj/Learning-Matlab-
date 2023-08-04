@@ -1,7 +1,7 @@
 求解方程根：解析解、图像法、数值解            %用mathmatica更简便
 
 
-解析解
+解析解（直观理性，但结果为函数，较复杂，有时无法计算出结果）
 
 前置需要：syms x                              %将x符号化，且与x相关的都转化为symbolic
 
@@ -77,5 +77,26 @@ z=int(y);
 z=z-subs(z,x,0);                                      %subs(对象,old,new),symbolic substitution
 
 
+Q3：
+求出y=(x^2-x+1)/(x+3)，在0-10的积分。
+
+Ans：
+1.
+y=@(x) (x.^2-x+1)./(x+3);
+a=integral(y,0,10);
+2.
+syms x;
+y=(x^2-x+1)/(x+3);
+z=int(y);
+a=subs(z,x,10)-subs(z,x,0);
+3.
+syms x;
+y=(x^2-x+1)/(x+3);
+a=int(y,0,10);
 
 
+图像法
+
+
+
+数值解（总能计算出精确数值，容易编码，但难以理解）
