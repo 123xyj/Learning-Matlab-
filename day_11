@@ -52,7 +52,8 @@ A=[a b; c d];
 inv_A=inv(A);
 
 
-syms还能直接用diff求出导（得公式），如y=4*x^5：
+syms还能直接用diff求出导和积（得公式）。
+求导，如y=4*x^5的导：
 syms x;
 y=4*x^5;
 dy=diff(y);
@@ -69,6 +70,11 @@ df=diff(f);
 dg=diff(g);
 
 
+求积分，如求y=x^2*exp(x)的积分z,z(0)=0：
+syms x;
+y=x^2*exp(x);
+z=int(y);
+z=z-subs(z,x,0);                                      %subs(对象,old,new),symbolic substitution
 
 
 
