@@ -24,7 +24,7 @@ M3:s2=flip(s1);       %flip翻转元素，而reverse只能翻转字符串
 
 matlab的struct与c类似，如：
 学生-姓名&学号&邮箱&成绩
-student.name=’xu yujia‘
+student.name='xu yujia'
 student.number=2231019
 student.id='18057998120@163.com'
 student.grade=[100,75,84]
