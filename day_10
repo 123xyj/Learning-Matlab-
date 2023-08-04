@@ -190,4 +190,15 @@ inty=h/3*(y(1)+y(end)+4*sum(y(2:2:end-1))+2*sum(y(3:2:end-2)));
 matlab中：@为取地址
 
 1.当写自主脚本时，输入为input，不能是内置函数，所以需@取内置函数地址
-  如：
+如：function [y] = tri_plot (input,x)
+y=input(x);
+plot(x,y,'r--');
+xlabel('x');
+ylabel('function(x)');
+end
+
+2.内置积分函数integral()
+如：y=@(x) 1./(x.^3-2*x-5);
+integral(y,0,2);
+%y为函数句柄，@()内为需要输入的参数值，后续为输出
+%integral()为内置函数，需要函数及其上下限且必须用句柄方式
