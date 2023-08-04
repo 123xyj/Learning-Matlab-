@@ -1,6 +1,41 @@
-求解方程根：解析解、图像法、数值解
+求解方程根：解析解、图像法、数值解            %用mathmatica更简便
 
 
 解析解
 
-syms x                              %将x符号化，且与x相关的都转化为symbolic valuable
+前置需要：syms x                              %将x符号化，且与x相关的都转化为symbolic
+
+solve()                                       %solve(equation,symbol)，解出equation=f(symbol)=0的解
+如：
+syms x;
+y=x*sin(x)-x;
+solve(y,x);
+
+
+Q1:
+求出(cos(x))^2+(sin(x))^2=0和(cos(x))^2-(sin(x))^2=0的解。
+
+Ans：
+syms x;
+y1=(cos(x))^2+(sin(x))^2;
+y2=(cos(x))^2-(sin(x))^2;
+s1=solve(y1,x);
+s2=solve(y2,x);
+
+
+解方程组，如：
+syms x y;
+eq1=x-2*y-5;
+eq2=x+y-6;
+A=solve(eq1,eq2,x,y);
+
+解含符号的方程，如解a*x^2+b*x+c=0：
+syms x a b c;
+y=a*x^2+b*x+c;
+s=solve(y,x);
+%若b为被求解量，只需将solve中的x改为b
+
+
+
+
+
