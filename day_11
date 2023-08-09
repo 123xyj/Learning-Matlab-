@@ -5,7 +5,7 @@
 
 前置需要：syms x                              %将x符号化，且与x相关的都转化为symbolic
 
-solve()                                       %solve(equation,symbol)，解出equation=f(symbol)=0的解
+solve()                                       %solve(equation,symbol)，解出equation=f(symbol)=0的解，仅用于线性方程
 如：
 syms x;
 y=x*sin(x)-x;
@@ -102,10 +102,22 @@ a=int(y,0,10);
 
 前置需要@
 
-fsolve()                                            %fsolve(方程,x根的预测值)
+fsolve()                                            %fsolve(方程,x根的预测值)，仅接受输入一个变量，多个需要函数
 如：
 f=@(x) 1.2*x+0.3+x*sin(x);
 fsolve(f,0);
+
+
+Q4：
+使用fsolve()，找到f(x,y)=2*x-y-exp(-x); f(x,y)=2*y-x-exp(-y)的解，猜测(x,y)=(-5,-5)。
+
+Ans：
+
+
+
+
+
+
 
 
 
