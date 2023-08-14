@@ -137,6 +137,6 @@ boxplot() and errorbar()                  %箱线图 和 含置信区间的曲�
 如：
 marks=[80 81 81 84 88 92 92 94 96 97];
 boxplot(marks);                           %箱线图各端点分别为min、q1、median、q3、max
-
+%若x为矩阵，则boxplot(x)，是为x每列画一个箱线图
 
 
