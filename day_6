@@ -39,7 +39,7 @@ ylabel('Right Y-axils');
 title('Labeling yyaxis');
 
 
-hist()                                  %整体数据，类似统计表
+hist()                                  %整体数据，类似统计表，y轴为出现次数
 如：y=randn(1,1000);                    %rand：随机分布的矩阵；randn：正态分布的矩阵
 subplot(2,1,1);
 hist(y,10);
