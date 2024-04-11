@@ -45,6 +45,7 @@ function y = mean（x）
 （代码）
 
 function - keyword   y - 输出   mean - 函数名   x - 输入
+(name).m 脚本名必须和函数名一致。
 
 
 Q2:
